@@ -15,7 +15,7 @@ export function Footer({ navigate }: Props) {
             {item}
           </button>
         ))}
-        <a href="https://github.com/Oyewolesyl/yesCode" target="_blank" rel="noreferrer">
+        <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">
           yesCode
         </a>
       </div>

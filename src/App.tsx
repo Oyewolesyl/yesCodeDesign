@@ -73,6 +73,8 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
         </div>
       </section>
 
+      <ProjectIndex navigate={navigate} />
+
       <section className="strip">
         {["product leadership", "product strategy", "product design", "UI / UX", "brand systems", "creative direction", "handoff"].map((item) => (
           <span key={item}>{item}</span>
@@ -102,7 +104,7 @@ function Home({ navigate }: { navigate: (page: string) => void }) {
 function Work({ navigate }: { navigate: (page: string) => void }) {
   return (
     <main className="page">
-      <PageHeader eyebrow="work" title="Five design systems, treated as proof." text="The work is organized around product direction, visual systems, interface decisions, and build-ready handoff." />
+      <PageHeader eyebrow="work" title="Six design systems, treated as proof." text="The work is organized around product direction, visual systems, interface decisions, and build-ready handoff." />
       <div className="projects-grid">
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} onOpen={(slug) => navigate(`project:${slug}`)} />
@@ -148,6 +150,15 @@ function ProjectDetail({ slug, navigate }: { slug: string; navigate: (page: stri
           <MediaFrame key={image} src={image} />
         ))}
       </section>
+      {project.proofLinks?.length ? (
+        <section className="proof-links">
+          {project.proofLinks.map((link) => (
+            <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+              {link.label}
+            </a>
+          ))}
+        </section>
+      ) : null}
       <section className="case-grid">
         <div>
           <h2>Design Scope</h2>
@@ -196,6 +207,21 @@ function ScrollTools() {
       <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} aria-label="Scroll to top">↑</button>
       <button onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" })} aria-label="Scroll to bottom">↓</button>
     </div>
+  );
+}
+
+function ProjectIndex({ navigate }: { navigate: (page: string) => void }) {
+  return (
+    <section className="project-index" aria-label="Live projects">
+      {projects.map((project) => (
+        <article key={project.slug}>
+          <button onClick={() => navigate(`project:${project.slug}`)} aria-label={`${project.title} case`}>
+            <img src={project.logo} alt={project.title} />
+          </button>
+          <a href={project.liveUrl} target="_blank" rel="noreferrer">live</a>
+        </article>
+      ))}
+    </section>
   );
 }
 
@@ -262,7 +288,10 @@ function Contact() {
   return (
     <main className="page contact" id="contact">
       <PageHeader eyebrow="contact" title="Start with the direction." text="Tell us what you need designed, refined, branded, or prepared for build." />
-      <a className="mail-link" href="mailto:hello@yescodedesign.studio">hello@yescodedesign.studio</a>
+      <div className="contact-actions">
+        <a className="mail-link" href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">WhatsApp 08104190898</a>
+        <a className="mail-link secondary-link" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">X / Twitter</a>
+      </div>
       <div className="contact-grid">
         {["Name", "Email", "Brand / Project", "What do you need designed?", "Existing assets?", "Timeline", "Budget range", "Links"].map((item) => (
           <span key={item}>{item}</span>
@@ -277,8 +306,8 @@ function SisterBrand() {
     <section className="sister">
       <span className="eyebrow">ecosystem</span>
       <h2>Need the build layer? Visit yesCode.</h2>
-      <p>yesCode Design shapes the product. yesCode executes the software engineering and AI systems layer.</p>
-      <a href="https://github.com/Oyewolesyl/yesCode" target="_blank" rel="noreferrer">open yesCode</a>
+      <p>yesCode Design shapes the product. yesCode executes the software engineering, ecommerce, and backend layer.</p>
+      <a href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">open yesCode</a>
     </section>
   );
 }

@@ -13,12 +13,14 @@ export type Project = {
   liveUrl: string;
   summary: string;
   role: string;
+  logo: string;
   image: string;
   gallery: string[];
   outcome: string;
   skills: string[];
   tools: string[];
   sections: string[];
+  proofLinks?: { label: string; url: string }[];
 };
 
 export const projects: Project[] = [
@@ -30,6 +32,7 @@ export const projects: Project[] = [
     summary:
       "Product and web direction for a real estate brand that needs trust, luxury pacing, inquiry clarity, and strong property presentation.",
     role: "Product leadership, website design direction, brand system application, lead journey planning.",
+    logo: `${ahome}/brand/ahome-logo-gold-dark.svg`,
     image: `${ahome}/properties/estate-approach-05.png`,
     gallery: [
       `${ahome}/video/ahome-brand-film.mp4`,
@@ -49,6 +52,7 @@ export const projects: Project[] = [
     summary:
       "Hardware brand direction for sleep-focused audio: product storytelling, research visuals, fit studies, and launch presentation.",
     role: "Product strategy, creative direction, product design, hardware storytelling, campaign-ready visual system.",
+    logo: `${ypod}/yema-case-dark.png`,
     image: `${ypod}/yema-case-dark.png`,
     gallery: [
       `${ypod}/videos/yema-1-floating-gradient.mp4`,
@@ -68,6 +72,7 @@ export const projects: Project[] = [
     summary:
       "Ecommerce design for product browsing, shop hierarchy, purchase confidence, and the handoff from brand story to cart.",
     role: "Product leadership, ecommerce UX, product card system, mobile commerce design.",
+    logo: `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
     image: `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
     gallery: [
       `${ypodStore}/nobg/yema-lite-in-case-nobg.png`,
@@ -78,6 +83,9 @@ export const projects: Project[] = [
     skills: ["Ecommerce UX", "Product cards", "Shop architecture", "Mobile-first design", "Handoff"],
     tools: ["Figma", "Notion", "Next.js", "React", "Vercel", "GitHub"],
     sections: ["Shop grid", "Product decision flow", "Mobile commerce", "Store hierarchy"],
+    proofLinks: [
+      { label: "Shop walkthrough video", url: "https://x.com/daveayodeji_/status/2069845385393086882/video/1?s=46" },
+    ],
   },
   {
     slug: "ypod-backend-management",
@@ -87,6 +95,7 @@ export const projects: Project[] = [
     summary:
       "Product operations and admin UX for the YPOD backend: the management surface that keeps the store, products, and operational decisions coherent.",
     role: "Product leadership, admin UX, dashboard structure, operations flow, and backend-facing handoff.",
+    logo: `${ypodStore}/remote/ypod-remote-showcase.png`,
     image: `${ypodStore}/remote/ypod-remote-showcase.png`,
     gallery: [
       `${ypod}/remote/ypod-remote-floating.mp4`,
@@ -97,6 +106,11 @@ export const projects: Project[] = [
     skills: ["Admin UX", "Product operations", "Dashboard design", "Ecommerce systems", "Handoff"],
     tools: ["Figma", "Notion", "Next.js", "React", "Vercel", "GitHub"],
     sections: ["Admin information hierarchy", "Product operations", "Management flow", "Backend-facing UX"],
+    proofLinks: [
+      { label: "Backend management video", url: "https://x.com/daveayodeji_/status/2069818800896106503/video/1?s=46" },
+      { label: "Custom GLB workflow video", url: "https://x.com/daveayodeji_/status/2069091597401071790/video/1?s=46" },
+      { label: "Product motion proof", url: "https://x.com/daveayodeji_/status/2070400194269557022/video/1?s=46" },
+    ],
   },
   {
     slug: "dealradar-ng",
@@ -106,6 +120,7 @@ export const projects: Project[] = [
     summary:
       "Marketplace and digital marketing design for local deal discovery, business promotion, campaign assets, and conversion.",
     role: "Product strategy, marketplace UX, brand asset application, campaign and commerce structure.",
+    logo: `${dealradar}/brand/main-logo-white.svg`,
     image: `${dealradar}/brand/main-logo-white.svg`,
     gallery: [
       `${dealradar}/products/amap.jpg`,
@@ -125,6 +140,7 @@ export const projects: Project[] = [
     summary:
       "Sustainable packaging design direction for banana fibre paper, environmental impact, product proof, and manufacturing story.",
     role: "Creative direction, web design, sustainability narrative, brand system and product proof presentation.",
+    logo: `${naturepacks}/brand/naturepacks-main.svg`,
     image: `${naturepacks}/brandinganddesign.png`,
     gallery: [
       `${naturepacks}/newnaturepacks/process/sheet-forming-new.mp4`,
@@ -136,5 +152,8 @@ export const projects: Project[] = [
     skills: ["Sustainability storytelling", "Creative direction", "Brand systems", "Product visuals", "Impact design"],
     tools: ["Figma", "Notion", "Photoshop", "HTML", "CSS", "Vercel"],
     sections: ["Sustainability story", "Product visuals", "Process narrative", "Impact proof"],
+    proofLinks: [
+      { label: "NaturePacks logo design video", url: "https://x.com/daveayodeji_/status/2065422409939738671/video/1?s=46" },
+    ],
   },
 ];
