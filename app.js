@@ -128,7 +128,7 @@ function home() {
         <p>yesCode Design shapes products before, during, and after build: product leadership, interface design, brand identity, Notion planning, Figma execution, and proof-led storytelling.</p>
         <div class="actions">
           <a class="button" href="#/work">View the work</a>
-          <a class="button secondary" href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">Start a design project</a>
+          <a class="button secondary" href="mailto:hello@yescodedesign.studio">Start a design project</a>
         </div>
       </div>
       <div class="design-board" aria-label="Design system board">
@@ -215,7 +215,7 @@ function contact() {
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Bring the project with the proof.</h2>
-        <p>WhatsApp: <a href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">08104190898</a></p>
+        <p>Email: <a href="mailto:hello@yescodedesign.studio">hello@yescodedesign.studio</a></p>
         <p>X: <a href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">@yescodedesign</a></p>
       </div>
     </section>
