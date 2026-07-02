@@ -114,22 +114,32 @@ function media(src, alt) {
   return `<div class="media">${src.endsWith(".mp4") ? `<video src="${src}" autoplay muted loop playsinline></video>` : `<img src="${src}" alt="${alt}" loading="lazy">`}</div>`;
 }
 
+function mark(project) {
+  return `<img src="${project.logo}" alt="${project.title}" loading="lazy" onerror="this.remove()"><span class="logo-fallback">${project.title}</span>`;
+}
+
 function home() {
   return `
     <section class="hero">
       <div>
         <img class="hero-logo" src="./assets/brand/yescode-design-main.svg" alt="yesCode Design">
         <p class="eyebrow">Product strategy. UI/UX. Brand systems. Handoff.</p>
-        <h1>Design work that gives the product a spine.</h1>
+        <h1>Product clarity before the build.</h1>
         <p>yesCode Design shapes products before, during, and after build: product leadership, interface design, brand identity, Notion planning, Figma execution, and proof-led storytelling.</p>
         <div class="actions">
           <a class="button" href="#/work">View the work</a>
           <a class="button secondary" href="https://wa.me/2348104190898" target="_blank" rel="noreferrer">Start a design project</a>
         </div>
       </div>
-      <div class="hero-media">${media("./assets/media/yescode-design-intro.mp4", "yesCode Design motion identity")}</div>
+      <div class="design-board" aria-label="Design system board">
+        <div class="board-top"><span></span><span></span><span></span></div>
+        <article><strong>01</strong><h3>Strategy</h3><p>what the product must prove</p></article>
+        <article><strong>02</strong><h3>Interface</h3><p>screens, flow, hierarchy</p></article>
+        <article><strong>03</strong><h3>Identity</h3><p>logo, tone, visual behavior</p></article>
+        <article><strong>04</strong><h3>Handoff</h3><p>Figma, Notion, build clarity</p></article>
+      </div>
     </section>
-    <section class="logo-strip">${projects.map((p) => `<a href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}"><img src="${p.logo}" alt="${p.title}"></a>`).join("")}</section>
+    <section class="case-dock">${projects.map((p) => `<a href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}">${mark(p)}<small>open case</small></a>`).join("")}</section>
     ${work("Featured design work")}
     ${servicesView()}
     ${processView()}
@@ -158,7 +168,7 @@ function work(title = "Work") {
       <div class="case-list">
         ${projects.map((p) => `
           <article class="case-card">
-            <a class="mark" href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}"><img src="${p.logo}" alt="${p.title}"></a>
+            <a class="mark" href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}">${mark(p)}</a>
             <div class="case-copy">
               <p class="eyebrow">${p.category}</p>
               <h3>${p.title}</h3>
@@ -217,7 +227,7 @@ function casePage(project) {
     <div class="case-page ${project.tone}">
       <section class="case-hero">
         <div>
-          <div class="case-identity"><img src="${project.logo}" alt="${project.title}"></div>
+          <div class="case-identity">${mark(project)}</div>
           <p class="eyebrow">${project.category}</p>
           <h1>${project.headline}</h1>
           <p>${project.summary}</p>
