@@ -2,106 +2,134 @@ const projects = [
   {
     slug: "a-home-realty",
     tone: "estate",
-    title: "A Home Realty",
-    category: "Real estate",
+    title: "a home realty",
+    category: "real estate",
     live: "https://ahomerealty.vercel.app",
     logo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
+    darkLogo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
     hero: "https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png",
+    proofVideo: "./assets/proofs/ahome-proof.mp4",
+    proofAlt: "./assets/proofs/ahome-dark-light-proof.mp4",
     media: ["https://ahomerealty.vercel.app/assets/properties/aerial-residence-d.png", "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png"],
-    headline: "A property experience built around trust before contact.",
-    summary: "A Home Realty needed a premium real estate interface with calm property hierarchy, clear inquiry paths, and visual confidence.",
-    role: "Real estate UX / product direction / brand application / lead journey",
-    tools: ["Figma", "Notion", "React", "Vite", "Vercel"],
-    story: ["Logo and property presentation lead the experience.", "The page rhythm supports trust and buyer confidence.", "The contact path stays visible without cheapening the brand."],
+    headline: "property trust shaped before the first inquiry",
+    summary: "a premium real estate experience with calm hierarchy, property confidence, clear inquiry paths, and brand restraint",
+    role: "real estate ux, product direction, brand application, lead journey",
+    system: "brand trust, property hierarchy, inquiry clarity, responsive presentation",
+    tools: ["figma", "notion", "react", "vite", "vercel"],
+    story: ["the property imagery carries the emotional proof", "the logo stays premium instead of decorative", "the contact path stays clear without cheapening the brand"],
   },
   {
     slug: "ypod",
     tone: "hardware",
-    title: "YPOD",
-    category: "Consumer electronics",
+    title: "ypod",
+    category: "consumer electronics",
     live: "https://ypod.vercel.app",
     logo: "./assets/projects/ypod/yema-dark.png",
+    darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/ypro-fit.png",
+    proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
     media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypod-reasoning.png"],
-    headline: "Sleep hardware presented with product proof.",
-    summary: "YPOD is shaped as a real consumer electronics brand through product art direction, fit studies, launch framing, and clear product storytelling.",
-    role: "Hardware storytelling / creative direction / product strategy / launch systems",
-    tools: ["Figma", "Notion", "Photoshop", "React", "Vercel"],
-    story: ["Product imagery is treated as evidence.", "Fit studies make the promise feel functional.", "The site moves from brand feeling to product clarity."],
+    headline: "sleep hardware presented with product proof",
+    summary: "ypod is shaped as a believable hardware brand through product art direction, fit studies, launch framing, and clear product storytelling",
+    role: "hardware storytelling, creative direction, product strategy, launch systems",
+    system: "brand feel, product media, fit proof, launch storytelling",
+    tools: ["figma", "notion", "photoshop", "react", "vercel"],
+    story: ["product imagery is treated as evidence", "fit studies make the promise feel functional", "the site moves from brand feeling into product clarity"],
   },
   {
     slug: "ypod-store",
     tone: "store",
-    title: "YPOD Store",
-    category: "Ecommerce",
+    title: "ypod store",
+    category: "ecommerce",
     live: "https://ypod-store.vercel.app/shop",
     logo: "./assets/projects/ypod/yema-case.png",
+    darkLogo: "./assets/projects/ypod/yema-case.png",
     hero: "./assets/projects/ypod/yema-case.png",
+    proofVideo: "./assets/proofs/ypod-store-proof.mp4",
     media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypro-fit.png"],
-    headline: "A shop surface that keeps the product decision in front.",
-    summary: "The ecommerce layer turns YPOD into a browsable product system with clear choice-making, product-card hierarchy, and mobile purchase intent.",
-    role: "Ecommerce UX / product cards / shop structure / conversion flow",
-    tools: ["Figma", "Notion", "Next.js", "React", "Vercel"],
-    story: ["Product cutouts lead the commerce experience.", "The layout supports quick comparison.", "The shop extends the brand without hiding purchase action."],
-    proofs: [{ label: "Shop walkthrough", url: "https://x.com/daveayodeji_/status/2069845385393086882/video/1?s=46" }],
+    headline: "a store surface that keeps the product decision visible",
+    summary: "the commerce layer turns ypod into a browsable product system with clear choice making, product hierarchy, and mobile purchase intent",
+    role: "ecommerce ux, product cards, shop structure, conversion flow",
+    system: "product browsing, comparison flow, mobile commerce, purchase confidence",
+    tools: ["figma", "notion", "next js", "react", "vercel"],
+    story: ["product cutouts lead the commerce experience", "the layout supports quick comparison", "the shop extends the brand without hiding purchase action"],
+    proofs: [{ label: "watch shop proof on x", url: "https://x.com/daveayodeji_/status/2069845385393086882/video/1?s=46" }],
   },
   {
     slug: "ypod-backend-management",
     tone: "backend",
-    title: "YPOD Backend Management",
-    category: "Backend operations",
+    title: "ypod backend management",
+    category: "backend operations",
     live: "https://ypod-backend-management.vercel.app/",
     logo: "./assets/projects/ypod/ypod-reasoning.png",
+    darkLogo: "./assets/projects/ypod/ypod-reasoning.png",
     hero: "./assets/projects/ypod/remote-customization.mp4",
+    proofVideo: "./assets/proofs/ypod-backend-management-proof.mp4",
+    proofAlt: "./assets/proofs/backend-crypto-transfer-proof.mp4",
     media: ["./assets/projects/ypod/ypod-reasoning.png", "./assets/projects/ypod/yema-dark.png"],
-    headline: "The admin layer treated as part of the product system.",
-    summary: "The backend surface makes product operations, store logic, dashboard hierarchy, and control flows usable instead of hidden.",
-    role: "Admin UX / backend systems / dashboard structure / database thinking",
-    tools: ["Figma", "Notion", "Next.js", "React", "Supabase", "Vercel"],
-    story: ["Admin flows need hierarchy and fast comprehension.", "Backend logic becomes visible product control.", "The system supports ecommerce operations after launch."],
+    headline: "the admin layer treated as part of the product",
+    summary: "the backend surface makes product operations, store logic, dashboard hierarchy, and control flows usable instead of hidden",
+    role: "admin ux, backend systems, dashboard structure, database thinking",
+    system: "supabase, auth, admin control, product operations, backend workflows",
+    tools: ["figma", "notion", "next js", "react", "supabase", "vercel"],
+    story: ["admin flows need hierarchy and fast comprehension", "backend logic becomes visible product control", "the system supports commerce operations after launch"],
     proofs: [
-      { label: "Backend management", url: "https://x.com/daveayodeji_/status/2069818800896106503/video/1?s=46" },
-      { label: "Custom GLB workflow", url: "https://x.com/daveayodeji_/status/2069091597401071790/video/1?s=46" },
+      { label: "watch backend proof on x", url: "https://x.com/daveayodeji_/status/2069818800896106503/video/1?s=46" },
+      { label: "watch custom glb proof on x", url: "https://x.com/daveayodeji_/status/2069091597401071790/video/1?s=46" },
     ],
   },
   {
     slug: "dealradar-ng",
     tone: "market",
-    title: "DealRadar NG",
-    category: "Digital marketing / ecommerce",
+    title: "dealradar ng",
+    category: "digital marketing ecommerce",
     live: "https://www.dealradarng.com",
     logo: "./assets/projects/dealradar/main-logo-light.svg",
+    darkLogo: "./assets/projects/dealradar/main-logo-light.svg",
     hero: "./assets/projects/dealradar/banner-dark.png",
+    proofVideo: "./assets/proofs/dealradar-proof.mp4",
     media: ["./assets/projects/dealradar/banner-dark.png", "./assets/projects/dealradar/main-logo-light.svg"],
-    headline: "Deal discovery framed for attention, merchants, and action.",
-    summary: "DealRadar NG needs instant recognition, campaign structure, merchant visibility, and a clear route from discovery to ecommerce action.",
-    role: "Marketplace UX / digital marketing / campaign structure / conversion design",
-    tools: ["Figma", "Notion", "Next.js", "React", "Tailwind CSS", "Vercel"],
-    story: ["The mark creates quick recognition.", "Campaign visuals support merchant visibility.", "The structure points visitors toward action."],
+    headline: "deal discovery framed for attention and action",
+    summary: "dealradar ng needs instant recognition, campaign structure, merchant visibility, and a clear route from discovery to ecommerce action",
+    role: "marketplace ux, digital marketing, campaign structure, conversion design",
+    system: "merchant visibility, offer discovery, campaign routing, ecommerce action",
+    tools: ["figma", "notion", "next js", "react", "tailwind css", "vercel"],
+    story: ["the mark creates quick recognition", "campaign visuals support merchant visibility", "the structure points visitors toward action"],
   },
   {
     slug: "naturepacks",
     tone: "impact",
-    title: "NaturePacks",
-    category: "Sustainability",
+    title: "naturepacks",
+    category: "sustainability",
     live: "https://www.naturepacks.org",
     logo: "./assets/projects/naturepacks/naturepacks-main.svg",
+    darkLogo: "./assets/projects/naturepacks/naturepacks-white-black.svg",
     hero: "./assets/projects/naturepacks/merch-01.jpeg",
+    proofVideo: "./assets/proofs/naturepacks-landing-proof.mp4",
+    proofAlt: "./assets/proofs/naturepacks-founder-proof.mp4",
     media: ["./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg", "./assets/projects/naturepacks/naturepacks-white-black.svg"],
-    headline: "Sustainability made tangible through product and brand proof.",
-    summary: "NaturePacks connects the material story, packaging identity, merch proof, product form, and environmental impact into one believable system.",
-    role: "Sustainability storytelling / brand systems / product visuals / impact design",
-    tools: ["Figma", "Notion", "Photoshop", "HTML", "CSS", "Vercel"],
-    story: ["Merch proves the identity beyond a flat logo.", "Paper and product assets make the material story tangible.", "The design turns environmental promise into visible proof."],
-    proofs: [{ label: "Logo design proof", url: "https://x.com/daveayodeji_/status/2065422409939738671/video/1?s=46" }],
+    headline: "sustainability made tangible through product and proof",
+    summary: "naturepacks connects material story, packaging identity, merch proof, product form, and environmental impact into one believable system",
+    role: "sustainability storytelling, brand systems, product visuals, impact design",
+    system: "material story, proof assets, product identity, environmental impact",
+    tools: ["figma", "notion", "photoshop", "html", "css", "vercel"],
+    story: ["merch proves the identity beyond a flat logo", "paper and product assets make the material story tangible", "the design turns environmental promise into visible proof"],
+    proofs: [{ label: "watch logo proof on x", url: "https://x.com/daveayodeji_/status/2065422409939738671/video/1?s=46" }],
   },
 ];
 
 const services = [
-  ["Product leadership", "Strategy, decisions, user priorities, and what the product must prove."],
-  ["UI / UX design", "Screen hierarchy, interface states, user flows, responsive behavior, and conversion moments."],
-  ["Brand systems", "Logo usage, tone, visual identity, proof assets, and project-specific storytelling."],
-  ["Handoff", "Figma organization, Notion planning, build clarity, and developer-ready structure."],
+  ["product leadership", "strategy, priority, user intent, and what the product must prove"],
+  ["interface design", "screen hierarchy, states, responsive behavior, motion, and conversion moments"],
+  ["brand systems", "logo usage, tone, proof assets, visual behavior, and project specific storytelling"],
+  ["handoff", "figma organization, notion planning, build clarity, and developer ready structure"],
+];
+
+const automation = [
+  ["planning", "notion holds the product notes, launch decisions, content structure, and what each page must prove"],
+  ["interface", "figma shapes the screen hierarchy, brand behavior, responsive expectations, and handoff logic"],
+  ["backend", "supabase, auth, storage, dashboards, and admin actions are explained where they matter"],
+  ["proof", "deployed urls, local videos, and project media show the work as a living product"],
 ];
 
 function isVideo(src) {
@@ -115,56 +143,86 @@ function media(src, alt, className = "") {
   return `<figure class="media ${className}">${content}</figure>`;
 }
 
-function mark(project) {
-  return `<img src="${project.logo}" alt="${project.title}" loading="lazy">`;
+function mark(project, dark = false) {
+  return `<img src="${dark ? project.darkLogo : project.logo}" alt="${project.title}" loading="lazy">`;
+}
+
+function projectStrip() {
+  return `
+    <section class="project-strip">
+      ${projects.map((project) => `
+        <a href="#/project/${project.slug}" class="strip-item ${project.tone}">
+          ${media(project.hero, project.title)}
+          <span class="strip-logo">${mark(project, true)}</span>
+          <span>${project.category}</span>
+          <strong>${project.title}</strong>
+        </a>
+      `).join("")}
+    </section>
+  `;
+}
+
+function phoneProof(project) {
+  return `
+    <div class="phone-stage">
+      <div class="phone-shell">
+        <span class="phone-speaker"></span>
+        <video src="${project.proofVideo}" autoplay muted loop playsinline></video>
+      </div>
+      ${project.proofAlt ? `<div class="mini-phone"><video src="${project.proofAlt}" autoplay muted loop playsinline></video></div>` : ""}
+    </div>
+  `;
 }
 
 function home() {
   return `
     <section class="hero">
       <div class="hero-copy">
-        <img class="hero-logo" src="./assets/brand/yescode-design-main.svg" alt="yesCode Design">
-        <p class="kicker">Strategy / interface / identity / handoff</p>
-        <h1>Design work people can build from.</h1>
-        <p>Product direction, UI/UX, brand systems, Figma execution, Notion planning, and project proof for products that need to feel real before launch.</p>
+        <img class="hero-logo" src="./assets/brand/yescode-design-main.svg" alt="yescode design">
+        <p class="kicker">strategy interface identity handoff</p>
+        <h1>design systems people can build from</h1>
+        <p>product direction, interface design, brand systems, figma execution, notion planning, and project specific proof for products that need to feel real before launch</p>
         <div class="actions">
-          <a class="primary" href="#/work">View design work</a>
-          <a class="secondary" href="#/services">What I handle</a>
+          <a class="primary" href="#/work">view the work</a>
+          <a class="secondary" href="#/services">see services</a>
         </div>
       </div>
       <div class="design-proof">
         <video src="./assets/media/yescode-design-intro.mp4" autoplay muted loop playsinline></video>
       </div>
     </section>
-    <section class="brand-index">
-      ${projects.map((project) => `<a href="#/project/${project.slug}" class="${project.tone}">${mark(project)}<span>${project.category}</span></a>`).join("")}
-    </section>
-    ${work("Featured design work")}
+    ${projectStrip()}
+    ${work("featured design work")}
+    ${systemsView()}
     ${servicesView()}
     ${processView()}
   `;
 }
 
-function work(title = "Work") {
+function work(title = "work") {
   return `
     <section class="work-shell">
       <div class="section-head">
         <p class="kicker">${title}</p>
-        <h2>Each case uses its own brand material.</h2>
-        <p>Real logos, deployed links, local project media, tool context, design role, and proof links are organized so the visitor understands the work.</p>
+        <h2>each case carries its own product world</h2>
+        <p>the landing uses real marks, deployed links, project media, tool context, design role, and proof links without forcing every brand into the same box</p>
       </div>
-      <div class="case-grid">
-        ${projects.map((project) => `
-          <article class="case-card ${project.tone}">
-            <a class="case-mark" href="#/project/${project.slug}">${mark(project)}</a>
-            <div>
+      <div class="case-flow">
+        ${projects.map((project, index) => `
+          <article class="case-line ${project.tone}">
+            <div class="case-count">${String(index + 1).padStart(2, "0")}</div>
+            <div class="case-media">
+              ${media(project.hero, project.title)}
+            </div>
+            <div class="case-copy">
+              <a class="case-logo" href="#/project/${project.slug}">${mark(project, true)}</a>
               <p class="kicker">${project.category}</p>
               <h3>${project.title}</h3>
               <p>${project.summary}</p>
               <p class="role">${project.role}</p>
               <div class="actions">
-                <a class="primary" href="#/project/${project.slug}">Open case</a>
-                <a class="secondary" href="${project.live}" target="_blank" rel="noreferrer">Visit deployed site</a>
+                <a class="primary" href="#/project/${project.slug}">open case</a>
+                <a class="secondary" href="${project.live}" target="_blank" rel="noreferrer">visit deployed site</a>
               </div>
             </div>
           </article>
@@ -177,8 +235,23 @@ function work(title = "Work") {
 function servicesView() {
   return `
     <section class="services">
-      <div class="section-head"><p class="kicker">Services</p><h2>Direction, design, identity, and handoff.</h2></div>
+      <div class="section-head"><p class="kicker">services</p><h2>direction, design, identity, and handoff</h2></div>
       <div class="service-list">${services.map(([name, body]) => `<article><h3>${name}</h3><p>${body}</p></article>`).join("")}</div>
+    </section>
+  `;
+}
+
+function systemsView() {
+  return `
+    <section class="systems">
+      <div class="section-head"><p class="kicker">systems</p><h2>the work explains strategy, tools, backend, and proof together</h2></div>
+      <div class="system-flow">${automation.map(([name, body], index) => `
+        <article>
+          <span>${String(index + 1).padStart(2, "0")}</span>
+          <h3>${name}</h3>
+          <p>${body}</p>
+        </article>
+      `).join("")}</div>
     </section>
   `;
 }
@@ -186,11 +259,11 @@ function servicesView() {
 function processView() {
   return `
     <section class="process">
-      <p class="kicker">Process</p>
+      <p class="kicker">process</p>
       <div class="process-grid">
-        <article><strong>01</strong><h3>Understand</h3><p>Audience, product, brand, proof assets, and what the experience must make clear.</p></article>
-        <article><strong>02</strong><h3>Compose</h3><p>Interface structure, identity behavior, media hierarchy, copy, and live project pathway.</p></article>
-        <article><strong>03</strong><h3>Hand off</h3><p>Figma, Notion, implementation notes, responsive expectations, and build-ready decisions.</p></article>
+        <article><strong>01</strong><h3>understand</h3><p>audience, product, brand, proof assets, and what the experience must make clear</p></article>
+        <article><strong>02</strong><h3>compose</h3><p>interface structure, identity behavior, media hierarchy, copy, and live project pathway</p></article>
+        <article><strong>03</strong><h3>hand off</h3><p>figma, notion, implementation notes, responsive expectations, and build ready decisions</p></article>
       </div>
     </section>
   `;
@@ -199,11 +272,11 @@ function processView() {
 function contact() {
   return `
     <section class="contact">
-      <img src="./assets/brand/yescode-design-main.svg" alt="yesCode Design">
+      <img src="./assets/brand/yescode-design-main.svg" alt="yescode design">
       <div>
-        <p class="kicker">Contact</p>
-        <h2>Bring the product, the assets, and the proof.</h2>
-        <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">Open X</a>
+        <p class="kicker">contact</p>
+        <h2>bring the product, the assets, and the proof</h2>
+        <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">open x</a>
       </div>
     </section>
   `;
@@ -221,26 +294,28 @@ function casePage(project) {
           <p class="role">${project.role}</p>
           <div class="tool-line">${project.tools.map((tool) => `<span>${tool}</span>`).join("")}</div>
           <div class="actions">
-            <a class="primary" href="${project.live}" target="_blank" rel="noreferrer">Visit deployed site</a>
-            <a class="secondary" href="#/work">Back to work</a>
+            <a class="primary" href="${project.live}" target="_blank" rel="noreferrer">visit deployed site</a>
+            <a class="secondary" href="#/work">back to work</a>
           </div>
         </div>
-        ${media(project.hero, project.title, "hero-media")}
+        ${phoneProof(project)}
       </section>
       <section class="case-story">
         <article>
-          <p class="kicker">Story</p>
-          <h2>What the work needed to prove</h2>
+          <p class="kicker">story</p>
+          <h2>what the work needed to prove</h2>
           <ul>${project.story.map((item) => `<li>${item}</li>`).join("")}</ul>
         </article>
         <article>
-          <p class="kicker">Live surface</p>
-          <h2>${project.live.replace("https://", "")}</h2>
-          <p>The deployed project is linked clearly so the work can be inspected directly.</p>
+          <p class="kicker">live surface</p>
+          <h2>deployed site</h2>
+          <p>the deployed project is linked clearly so the work can be inspected directly</p>
+          <p class="system-note">${project.system}</p>
           ${project.proofs ? `<div class="proof-links">${project.proofs.map((proof) => `<a class="secondary" href="${proof.url}" target="_blank" rel="noreferrer">${proof.label}</a>`).join("")}</div>` : ""}
         </article>
       </section>
       <section class="proof-wall">
+        ${media(project.hero, project.title, "hero-media")}
         ${project.media.map((src, index) => media(src, `${project.title} proof ${index + 1}`)).join("")}
       </section>
     </div>
@@ -254,7 +329,7 @@ function route() {
   if (hash.startsWith("#/project/")) {
     const project = projects.find((item) => item.slug === hash.replace("#/project/", ""));
     app.innerHTML = project ? casePage(project) : home();
-  } else if (hash === "#/work") app.innerHTML = work("All design work");
+  } else if (hash === "#/work") app.innerHTML = work("all design work");
   else if (hash === "#/services") app.innerHTML = servicesView();
   else if (hash === "#/process") app.innerHTML = processView();
   else if (hash === "#/contact") app.innerHTML = contact();
