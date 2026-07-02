@@ -123,12 +123,12 @@ function home() {
     <section class="hero">
       <div>
         <img class="hero-logo" src="./assets/brand/yescode-design-main.svg" alt="yesCode Design">
-        <p class="eyebrow">Product strategy. UI/UX. Brand systems. Handoff.</p>
-        <h1>Product clarity before the build.</h1>
-        <p>yesCode Design shapes products before, during, and after build: product leadership, interface design, brand identity, Notion planning, Figma execution, and proof-led storytelling.</p>
+        <p class="eyebrow">Strategy / interface / identity / handoff</p>
+        <h1>Design systems people can build from.</h1>
+        <p>Product direction, UI/UX, brand systems, Figma execution, Notion planning, and project-specific proof for products that need to feel real before they launch.</p>
         <div class="actions">
           <a class="button" href="#/work">View the work</a>
-          <a class="button secondary" href="mailto:hello@yescodedesign.studio">Start a design project</a>
+          <a class="button secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">Start a design project</a>
         </div>
       </div>
       <div class="design-board" aria-label="Design system board">
@@ -139,7 +139,7 @@ function home() {
         <article><strong>04</strong><h3>Handoff</h3><p>Figma, Notion, build clarity</p></article>
       </div>
     </section>
-    <section class="case-dock">${projects.map((p) => `<a href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}">${mark(p)}<small>open case</small></a>`).join("")}</section>
+    <section class="case-dock">${projects.map((p) => `<a href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}">${mark(p)}<small>${p.category}</small></a>`).join("")}</section>
     ${work("Featured design work")}
     ${servicesView()}
     ${processView()}
@@ -162,18 +162,18 @@ function work(title = "Work") {
     <section class="work-shell">
       <div class="section-head">
         <p class="eyebrow">${title}</p>
-        <h2>Each case opens into its own world.</h2>
-        <p>Every project uses its real mark, real media, direct deployed link, tools, design role, and the story behind the work.</p>
+        <h2>Each case carries its own brand behavior.</h2>
+        <p>Real marks, live sites, project-specific media, design role, tools, proof, and the story behind each product.</p>
       </div>
       <div class="case-list">
         ${projects.map((p) => `
-          <article class="case-card">
+          <article class="case-line">
             <a class="mark" href="#/project/${p.slug}" style="--brand-bg:${brandBg(p.tone)}">${mark(p)}</a>
             <div class="case-copy">
               <p class="eyebrow">${p.category}</p>
               <h3>${p.title}</h3>
               <p>${p.summary}</p>
-              <div class="tag-row">${p.skills.slice(0, 4).map((s) => `<span>${s}</span>`).join("")}</div>
+              <p class="skill-line">${p.skills.slice(0, 4).join(" / ")}</p>
               <div class="case-actions">
                 <a class="button" href="#/project/${p.slug}">Open case</a>
                 <a class="button secondary" href="${p.live}" target="_blank" rel="noreferrer">Visit deployed site</a>
@@ -215,7 +215,6 @@ function contact() {
       <div>
         <p class="eyebrow">Contact</p>
         <h2>Bring the project with the proof.</h2>
-        <p>Email: <a href="mailto:hello@yescodedesign.studio">hello@yescodedesign.studio</a></p>
         <p>X: <a href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">@yescodedesign</a></p>
       </div>
     </section>
@@ -231,7 +230,7 @@ function casePage(project) {
           <p class="eyebrow">${project.category}</p>
           <h1>${project.headline}</h1>
           <p>${project.summary}</p>
-          <div class="tool-row">${project.tools.map((tool) => `<span>${tool}</span>`).join("")}</div>
+          <p class="tool-line">${project.tools.join(" / ")}</p>
           <div class="case-actions">
             <a class="button" href="${project.live}" target="_blank" rel="noreferrer">Visit deployed site</a>
             <a class="button secondary" href="#/work">Back to work</a>
