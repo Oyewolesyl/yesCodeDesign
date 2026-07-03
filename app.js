@@ -28,27 +28,27 @@ const projects = [
     darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/ypro-fit.png",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
-    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypod-reasoning.png"],
+    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypro-fit.png"],
     headline: "sleep hardware presented with product proof",
     summary: "ypod is shaped as a believable hardware brand through product art direction, fit studies, launch framing, and clear product storytelling",
     role: "hardware storytelling, creative direction, product strategy, launch systems",
     system: "brand feel, product media, fit proof, launch storytelling",
-    tools: ["figma", "notion", "photoshop", "react", "vercel"],
+    tools: ["figma", "notion", "react", "vercel"],
     story: ["product imagery is treated as evidence", "fit studies make the promise feel functional", "the site moves from brand feeling into product clarity"],
   },
   {
     slug: "ypod-store",
     tone: "store",
     title: "ypod store",
-    category: "ecommerce",
+    category: "ecommerce web app",
     live: "https://ypod-store.vercel.app/shop",
     logo: "./assets/projects/ypod/yema-case.png",
     darkLogo: "./assets/projects/ypod/yema-case.png",
-    hero: "./assets/projects/ypod/yema-case.png",
+    hero: "./assets/projects/ypod/remote-customization.mp4",
     proofVideo: "./assets/proofs/ypod-store-proof.mp4",
-    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypro-fit.png"],
+    media: ["./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/yema-dark.png"],
     headline: "a store surface that keeps the product decision visible",
-    summary: "the commerce layer turns ypod into a browsable product system with clear choice making, product hierarchy, and mobile purchase intent",
+    summary: "the commerce web app turns ypod into a browsable product system with clear choice making, product hierarchy, and mobile purchase intent",
     role: "ecommerce ux, product cards, shop structure, conversion flow",
     system: "product browsing, comparison flow, mobile commerce, purchase confidence",
     tools: ["figma", "notion", "next js", "react", "vercel"],
@@ -63,14 +63,14 @@ const projects = [
     live: "https://ypod-backend-management.vercel.app/",
     logo: "./assets/projects/ypod/ypod-reasoning.png",
     darkLogo: "./assets/projects/ypod/ypod-reasoning.png",
-    hero: "./assets/projects/ypod/remote-customization.mp4",
+    hero: "./assets/proofs/ypod-backend-management-proof.mp4",
     proofVideo: "./assets/proofs/ypod-backend-management-proof.mp4",
     proofAlt: "./assets/proofs/backend-crypto-transfer-proof.mp4",
     media: ["./assets/projects/ypod/ypod-reasoning.png", "./assets/projects/ypod/yema-dark.png"],
     headline: "the admin layer treated as part of the product",
-    summary: "the backend surface makes product operations, store logic, dashboard hierarchy, and control flows usable instead of hidden",
+    summary: "the backend surface makes product operations, store logic, dashboard hierarchy, payment proof, and control flows usable instead of hidden",
     role: "admin ux, backend systems, dashboard structure, database thinking",
-    system: "supabase, auth, admin control, product operations, backend workflows",
+    system: "supabase, auth, admin control, product operations, payment review",
     tools: ["figma", "notion", "next js", "react", "supabase", "vercel"],
     story: ["admin flows need hierarchy and fast comprehension", "backend logic becomes visible product control", "the system supports commerce operations after launch"],
     proofs: [
@@ -99,20 +99,20 @@ const projects = [
   {
     slug: "naturepacks",
     tone: "impact",
-    title: "naturepacks",
+    title: "naturepacks™",
     category: "sustainability",
     live: "https://www.naturepacks.org",
-    logo: "./assets/projects/naturepacks/naturepacks-main.svg",
+    logo: "./assets/projects/naturepacks/naturepacks-white-black.svg",
     darkLogo: "./assets/projects/naturepacks/naturepacks-white-black.svg",
-    hero: "./assets/projects/naturepacks/merch-01.jpeg",
+    hero: "./assets/media/naturepacks-shirt-proof.jpg",
     proofVideo: "./assets/proofs/naturepacks-landing-proof.mp4",
     proofAlt: "./assets/proofs/naturepacks-founder-proof.mp4",
-    media: ["./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg", "./assets/projects/naturepacks/naturepacks-white-black.svg"],
+    media: ["./assets/projects/naturepacks/merch-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg"],
     headline: "sustainability made tangible through product and proof",
-    summary: "naturepacks connects material story, packaging identity, merch proof, product form, and environmental impact into one believable system",
+    summary: "naturepacks™ connects material story, packaging identity, merch proof, product form, and environmental impact into one believable system",
     role: "sustainability storytelling, brand systems, product visuals, impact design",
     system: "material story, proof assets, product identity, environmental impact",
-    tools: ["figma", "notion", "photoshop", "html", "css", "vercel"],
+    tools: ["figma", "notion", "html", "css", "vercel"],
     story: ["merch proves the identity beyond a flat logo", "paper and product assets make the material story tangible", "the design turns environmental promise into visible proof"],
     proofs: [{ label: "watch logo proof on x", url: "https://x.com/daveayodeji_/status/2065422409939738671/video/1?s=46" }],
   },
@@ -178,8 +178,7 @@ function home() {
   return `
     <section class="hero">
       <div class="hero-copy">
-        <img class="hero-logo" src="./assets/brand/yescode-design-main.svg" alt="yescode design">
-        <p class="kicker">strategy interface identity handoff</p>
+        <p class="kicker">strategy, interface, identity, handoff</p>
         <h1>design systems people can build from</h1>
         <p>product direction, interface design, brand systems, figma execution, notion planning, and project specific proof for products that need to feel real before launch</p>
         <div class="actions">
@@ -187,8 +186,8 @@ function home() {
           <a class="secondary" href="#/services">see services</a>
         </div>
       </div>
-      <div class="design-proof">
-        <video src="./assets/media/yescode-design-intro.mp4" autoplay muted loop playsinline></video>
+      <div class="hero-board">
+        ${["strategy", "interface", "identity", "handoff"].map((item, index) => `<article><span>${String(index + 1).padStart(2, "0")}</span><strong>${item}</strong></article>`).join("")}
       </div>
     </section>
     ${projectStrip()}
@@ -205,7 +204,7 @@ function work(title = "work") {
       <div class="section-head">
         <p class="kicker">${title}</p>
         <h2>each case carries its own product world</h2>
-        <p>the landing uses real marks, deployed links, project media, tool context, design role, and proof links without forcing every brand into the same box</p>
+        <p>real marks, live sites, local proof videos, tool context, design role, and product story are organized around what each brand needed to become</p>
       </div>
       <div class="case-flow">
         ${projects.map((project, index) => `
@@ -244,7 +243,7 @@ function servicesView() {
 function systemsView() {
   return `
     <section class="systems">
-      <div class="section-head"><p class="kicker">systems</p><h2>the work explains strategy, tools, backend, and proof together</h2></div>
+      <div class="section-head"><p class="kicker">systems</p><h2>strategy, tools, backend, and proof work together</h2></div>
       <div class="system-flow">${automation.map(([name, body], index) => `
         <article>
           <span>${String(index + 1).padStart(2, "0")}</span>
@@ -276,6 +275,16 @@ function contact() {
       <div>
         <p class="kicker">contact</p>
         <h2>bring the product, the assets, and the proof</h2>
+        <p class="founders">cofounders: <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a> and <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a></p>
+        <form class="intake-form" action="https://formsubmit.co/oyewolesyl@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="new yescode design project overview">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_cc" value="daveolaniyan@gmail.com">
+          <label>name<input name="name" type="text" autocomplete="name" required></label>
+          <label>email<input name="email" type="email" autocomplete="email" required></label>
+          <label>project overview<textarea name="project_overview" rows="5" required></textarea></label>
+          <button class="primary" type="submit">send project overview</button>
+        </form>
         <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">open x</a>
       </div>
     </section>
@@ -337,12 +346,12 @@ function route() {
   window.scrollTo({ top: 0, behavior: "smooth" });
   wireMedia();
   document.querySelector(".site-header").classList.remove("open");
-  setTimeout(() => document.body.classList.remove("is-loading"), 340);
+  setTimeout(() => document.body.classList.remove("is-loading"), 380);
 }
 
 function wireMedia() {
-  document.querySelectorAll(".media img, .media video, .design-proof video").forEach((item) => {
-    const done = () => item.closest(".media, .design-proof")?.classList.add("ready");
+  document.querySelectorAll(".media img, .media video, .phone-shell video, .mini-phone video").forEach((item) => {
+    const done = () => item.closest(".media, .phone-shell, .mini-phone")?.classList.add("ready");
     item.addEventListener("load", done);
     item.addEventListener("loadeddata", done);
     if (item.complete || item.readyState >= 2) done();
