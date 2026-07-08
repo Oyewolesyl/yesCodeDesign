@@ -236,8 +236,13 @@ body.is-loading .load-veil {
 .strip-logo {
   position: relative;
   z-index: 2;
+  display: grid;
+  place-items: center;
   width: min(15rem, 72%);
-  margin-bottom: auto;
+  margin: 0 auto auto;
+  padding: 0.65rem;
+  background: rgba(247, 244, 237, 0.92);
+  border: 1px solid rgba(247, 244, 237, 0.5);
 }
 .strip-logo img {
   max-width: 100%;
@@ -301,9 +306,13 @@ body.is-loading .load-veil {
   min-height: clamp(15rem, 27vw, 29rem);
 }
 .case-logo {
-  display: block;
+  display: grid;
+  place-items: center;
   width: min(14rem, 78%);
-  margin-bottom: 1.5rem;
+  margin: 0 auto 1.5rem;
+  padding: 0.75rem;
+  background: rgba(247, 244, 237, 0.92);
+  border: 1px solid rgba(247, 244, 237, 0.5);
 }
 .case-logo img {
   max-width: 100%;
@@ -377,9 +386,13 @@ body.is-loading .load-veil {
   border-bottom: 1px solid var(--line);
 }
 .case-identity {
-  display: block;
+  display: grid;
+  place-items: center;
   width: min(100%, 24rem);
-  margin-bottom: 1.6rem;
+  margin: 0 auto 1.6rem;
+  padding: 0.85rem;
+  background: rgba(247, 244, 237, 0.92);
+  border: 1px solid rgba(247, 244, 237, 0.5);
 }
 .case-identity img {
   max-width: 100%;
@@ -857,7 +870,15 @@ body.is-loading .load-veil::before {
   .contact h2,
   .case-copy h3 {
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+  }
+
+  .hero h1,
+  .section-head h2 {
+    font-size: clamp(2.15rem, 10vw, 3.2rem);
+    line-height: 0.96;
   }
 
   .hero-board {
@@ -865,7 +886,7 @@ body.is-loading .load-veil::before {
   }
 
   .strip-item {
-    min-height: 18rem;
+    min-height: 20rem;
     padding: 1rem;
   }
 

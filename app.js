@@ -8,6 +8,7 @@ const projects = [
     logo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
     darkLogo: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg",
     hero: "https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png",
+    card: "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png",
     proofVideo: "./assets/proofs/ahome-proof.mp4",
     proofAlt: "./assets/proofs/ahome-dark-light-proof.mp4",
     media: ["https://ahomerealty.vercel.app/assets/properties/aerial-residence-d.png", "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png"],
@@ -27,6 +28,7 @@ const projects = [
     logo: "./assets/projects/ypod/yema-dark.png",
     darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/yema-dark.png",
+    card: "./assets/projects/ypod/yema-case.png",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
     media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png"],
     headline: "sleep hardware presented with product proof",
@@ -45,6 +47,7 @@ const projects = [
     logo: "./assets/projects/ypod/yema-case.png",
     darkLogo: "./assets/projects/ypod/yema-case.png",
     hero: "./assets/projects/ypod/remote-customization.mp4",
+    card: "./assets/projects/ypod/remote-customization.mp4",
     proofVideo: "./assets/proofs/ypod-store-proof.mp4",
     media: ["./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/yema-dark.png"],
     headline: "a store surface that keeps the product decision visible",
@@ -64,6 +67,7 @@ const projects = [
     logo: "./assets/projects/ypod/ypod-reasoning.png",
     darkLogo: "./assets/projects/ypod/ypod-reasoning.png",
     hero: "./assets/proofs/ypod-backend-management-proof.mp4",
+    card: "./assets/projects/ypod/backend-management-room.jpeg",
     proofVideo: "./assets/proofs/ypod-backend-management-proof.mp4",
     proofAlt: "./assets/proofs/backend-crypto-transfer-proof.mp4",
     media: ["./assets/projects/ypod/ypod-reasoning.png", "./assets/projects/ypod/yema-dark.png"],
@@ -87,6 +91,7 @@ const projects = [
     logo: "./assets/projects/dealradar/main-logo-light.svg",
     darkLogo: "./assets/projects/dealradar/main-logo-light.svg",
     hero: "./assets/projects/dealradar/banner-dark.png",
+    card: "./assets/projects/dealradar/card1minimalgraphicblack.png",
     proofVideo: "./assets/proofs/dealradar-proof.mp4",
     media: ["./assets/projects/dealradar/banner-dark.png", "./assets/projects/dealradar/main-logo-light.svg"],
     headline: "deal discovery framed for attention and action",
@@ -102,9 +107,10 @@ const projects = [
     title: "naturepacks™",
     category: "sustainability",
     live: "https://www.naturepacks.org",
-    logo: "./assets/projects/naturepacks/naturepacks-white-black.svg",
-    darkLogo: "./assets/projects/naturepacks/naturepacks-white-black.svg",
+    logo: "./assets/projects/naturepacks/naturepacks-main.svg",
+    darkLogo: "./assets/projects/naturepacks/naturepacks-main.svg",
     hero: "./assets/media/naturepacks-shirt-proof.jpg",
+    card: "./assets/projects/naturepacks/paper-01.jpeg",
     proofVideo: "./assets/proofs/naturepacks-landing-proof.mp4",
     proofAlt: "./assets/proofs/naturepacks-founder-proof.mp4",
     media: ["./assets/projects/naturepacks/merch-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg"],
@@ -152,7 +158,7 @@ function projectStrip() {
     <section class="project-strip">
       ${projects.map((project) => `
         <a href="#/project/${project.slug}" class="strip-item ${project.tone}">
-          ${media(project.hero, project.title)}
+          ${media(project.card || project.hero, project.title)}
           <span class="strip-logo">${mark(project, true)}</span>
           <span>${project.category}</span>
           <strong>${project.title}</strong>
@@ -211,7 +217,7 @@ function work(title = "work") {
           <article class="case-line ${project.tone}">
             <div class="case-count">${String(index + 1).padStart(2, "0")}</div>
             <div class="case-media">
-              ${media(project.hero, project.title)}
+              ${media(project.card || project.hero, project.title)}
             </div>
             <div class="case-copy">
               <a class="case-logo" href="#/project/${project.slug}">${mark(project, true)}</a>
