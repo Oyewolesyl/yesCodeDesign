@@ -240,9 +240,9 @@ body.is-loading .load-veil {
   place-items: center;
   width: min(15rem, 72%);
   margin: 0 auto auto;
-  padding: 0.65rem;
-  background: rgba(247, 244, 237, 0.92);
-  border: 1px solid rgba(247, 244, 237, 0.5);
+  padding: 0;
+  background: transparent;
+  border: 0;
 }
 .strip-logo img {
   max-width: 100%;
@@ -310,9 +310,9 @@ body.is-loading .load-veil {
   place-items: center;
   width: min(14rem, 78%);
   margin: 0 auto 1.5rem;
-  padding: 0.75rem;
-  background: rgba(247, 244, 237, 0.92);
-  border: 1px solid rgba(247, 244, 237, 0.5);
+  padding: 0;
+  background: transparent;
+  border: 0;
 }
 .case-logo img {
   max-width: 100%;
@@ -390,9 +390,9 @@ body.is-loading .load-veil {
   place-items: center;
   width: min(100%, 24rem);
   margin: 0 auto 1.6rem;
-  padding: 0.85rem;
-  background: rgba(247, 244, 237, 0.92);
-  border: 1px solid rgba(247, 244, 237, 0.5);
+  padding: 0;
+  background: transparent;
+  border: 0;
 }
 .case-identity img {
   max-width: 100%;
@@ -935,4 +935,12 @@ body.is-loading .load-veil::before {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.strip-item.impact .strip-logo,
+.case-line.impact .case-logo,
+.case-page.impact .case-identity {
+  padding: 0.75rem;
+  background: rgba(247, 244, 237, 0.94);
+  border: 1px solid rgba(247, 244, 237, 0.5);
 }
