@@ -28,9 +28,10 @@ const projects = [
     logo: "./assets/projects/ypod/yema-dark.png",
     darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/yema-dark.png",
-    card: "./assets/projects/ypod/yema-case.png",
+    card: "./assets/projects/ypod/remote-customization.mp4",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
-    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-landing-proof.mp4"],
+    media: ["./assets/projects/ypod/yema-dark.png", "./assets/proofs/ypod-landing-proof.mp4"],
+    detailMedia: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-landing-proof.mp4"],
     headline: "sleep hardware with real product presence",
     summary: "ypod is presented as a hardware brand with clean product hierarchy, launch-ready art direction, and enough visual proof to make the product feel inspectable",
     role: "hardware storytelling, creative direction, product strategy, launch systems",
@@ -44,12 +45,13 @@ const projects = [
     title: "ypod store",
     category: "ecommerce web app",
     live: "https://ypod-store.vercel.app/shop",
-    logo: "./assets/projects/ypod/yema-case.png",
-    darkLogo: "./assets/projects/ypod/yema-case.png",
+    logo: "./assets/projects/ypod/yema-dark.png",
+    darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/remote-customization.mp4",
     card: "./assets/projects/ypod/remote-customization.mp4",
     proofVideo: "./assets/proofs/ypod-store-proof.mp4",
-    media: ["./assets/projects/ypod/remote-customization.mp4", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-store-proof.mp4"],
+    media: ["./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
+    detailMedia: ["./assets/projects/ypod/remote-customization.mp4", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-store-proof.mp4"],
     headline: "a store surface built for product decisions",
     summary: "the commerce web app turns ypod into a browsable product system with visible product choice, mobile purchase intent, and a clearer path toward checkout",
     role: "ecommerce ux, product cards, shop structure, conversion flow",
@@ -64,13 +66,14 @@ const projects = [
     title: "ypod backend management",
     category: "backend operations",
     live: "https://ypod-backend-management.vercel.app/",
-    logo: "./assets/projects/ypod/ypod-reasoning.png",
-    darkLogo: "./assets/projects/ypod/ypod-reasoning.png",
+    logo: "./assets/projects/ypod/yema-dark.png",
+    darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/proofs/ypod-backend-management-proof.mp4",
     card: "./assets/projects/ypod/backend-management-room.jpeg",
     proofVideo: "./assets/proofs/ypod-backend-management-proof.mp4",
     proofAlt: "./assets/proofs/backend-crypto-transfer-proof.mp4",
     media: ["./assets/projects/ypod/backend-management-room.jpeg", "./assets/proofs/ypod-backend-management-proof.mp4", "./assets/proofs/backend-crypto-transfer-proof.mp4"],
+    detailMedia: ["./assets/projects/ypod/backend-management-room.jpeg", "./assets/proofs/ypod-backend-management-proof.mp4", "./assets/proofs/backend-crypto-transfer-proof.mp4"],
     headline: "backend control treated like product",
     summary: "the backend surface turns operations, payment review, dashboard hierarchy, and product control into a visible system the business can actually run",
     role: "admin ux, backend systems, dashboard structure, database thinking",
@@ -110,10 +113,10 @@ const projects = [
     logo: "./assets/projects/naturepacks/naturepacks-main.svg",
     darkLogo: "./assets/projects/naturepacks/naturepacks-main.svg",
     hero: "./assets/media/naturepacks-shirt-proof.jpg",
-    card: "./assets/projects/naturepacks/paper-01.jpeg",
+    card: "./assets/media/naturepacks-shirt-proof.jpg",
     proofVideo: "./assets/proofs/naturepacks-landing-proof.mp4",
     proofAlt: "./assets/proofs/naturepacks-founder-proof.mp4",
-    media: ["./assets/projects/naturepacks/paper-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/media/naturepacks-shirt-proof.jpg", "./assets/proofs/naturepacks-landing-proof.mp4"],
+    media: ["./assets/media/naturepacks-shirt-proof.jpg", "./assets/projects/naturepacks/merch-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg", "./assets/proofs/naturepacks-landing-proof.mp4"],
     headline: "sustainability made visible with proof",
     summary: "naturepacks™ connects material story, packaging identity, product evidence, and environmental purpose into a brand system visitors can understand quickly",
     role: "sustainability storytelling, brand systems, product visuals, impact design",
@@ -154,7 +157,7 @@ function mark(project, dark = false) {
 }
 
 function detailMedia(project) {
-  return [project.card || project.hero, project.hero, ...project.media]
+  return (project.detailMedia || [project.card || project.hero, project.hero, ...project.media])
     .filter(Boolean)
     .filter((src, index, list) => list.indexOf(src) === index);
 }
@@ -373,6 +376,20 @@ document.querySelector(".menu-button").addEventListener("click", () => {
   const header = document.querySelector(".site-header");
   const open = header.classList.toggle("open");
   document.querySelector(".menu-button").setAttribute("aria-expanded", String(open));
+});
+
+document.addEventListener("submit", (event) => {
+  const form = event.target.closest(".intake-form");
+  if (!form) return;
+  event.preventDefault();
+  const data = new FormData(form);
+  const body = [
+    `name: ${data.get("name") || ""}`,
+    `email: ${data.get("email") || ""}`,
+    "",
+    data.get("project_overview") || "",
+  ].join("\n");
+  window.location.href = `mailto:oyewolesyl@gmail.com,daveolaniyan@gmail.com?subject=${encodeURIComponent("new yescode design project overview")}&body=${encodeURIComponent(body)}`;
 });
 document.querySelector("[data-scroll='top']").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 document.querySelector("[data-scroll='bottom']").addEventListener("click", () => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));
