@@ -11,9 +11,9 @@ const projects = [
     card: "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png",
     proofVideo: "./assets/proofs/ahome-proof.mp4",
     proofAlt: "./assets/proofs/ahome-dark-light-proof.mp4",
-    media: ["https://ahomerealty.vercel.app/assets/properties/aerial-residence-d.png", "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png"],
-    headline: "property trust shaped before the first inquiry",
-    summary: "a premium real estate experience with calm hierarchy, property confidence, clear inquiry paths, and brand restraint",
+    media: ["https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png", "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png", "https://ahomerealty.vercel.app/assets/properties/aerial-residence-d.png"],
+    headline: "premium property trust before inquiry",
+    summary: "a real estate experience built around premium property proof, calm navigation, buyer confidence, and a clear path from inspection to inquiry",
     role: "real estate ux, product direction, brand application, lead journey",
     system: "brand trust, property hierarchy, inquiry clarity, responsive presentation",
     tools: ["figma", "notion", "react", "vite", "vercel"],
@@ -30,9 +30,9 @@ const projects = [
     hero: "./assets/projects/ypod/yema-dark.png",
     card: "./assets/projects/ypod/yema-case.png",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
-    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png"],
-    headline: "sleep hardware presented with product proof",
-    summary: "ypod is shaped as a believable hardware brand through product art direction, launch framing, product hierarchy, and clear product storytelling",
+    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-landing-proof.mp4"],
+    headline: "sleep hardware with real product presence",
+    summary: "ypod is presented as a hardware brand with clean product hierarchy, launch-ready art direction, and enough visual proof to make the product feel inspectable",
     role: "hardware storytelling, creative direction, product strategy, launch systems",
     system: "brand feel, product media, product proof, launch storytelling",
     tools: ["figma", "notion", "react", "vercel"],
@@ -49,9 +49,9 @@ const projects = [
     hero: "./assets/projects/ypod/remote-customization.mp4",
     card: "./assets/projects/ypod/remote-customization.mp4",
     proofVideo: "./assets/proofs/ypod-store-proof.mp4",
-    media: ["./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/yema-dark.png"],
-    headline: "a store surface that keeps the product decision visible",
-    summary: "the commerce web app turns ypod into a browsable product system with clear choice making, product hierarchy, and mobile purchase intent",
+    media: ["./assets/projects/ypod/remote-customization.mp4", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-store-proof.mp4"],
+    headline: "a store surface built for product decisions",
+    summary: "the commerce web app turns ypod into a browsable product system with visible product choice, mobile purchase intent, and a clearer path toward checkout",
     role: "ecommerce ux, product cards, shop structure, conversion flow",
     system: "product browsing, comparison flow, mobile commerce, purchase confidence",
     tools: ["figma", "notion", "next.js", "react", "vercel"],
@@ -70,9 +70,9 @@ const projects = [
     card: "./assets/projects/ypod/backend-management-room.jpeg",
     proofVideo: "./assets/proofs/ypod-backend-management-proof.mp4",
     proofAlt: "./assets/proofs/backend-crypto-transfer-proof.mp4",
-    media: ["./assets/projects/ypod/ypod-reasoning.png", "./assets/projects/ypod/yema-dark.png"],
-    headline: "the admin layer treated as part of the product",
-    summary: "the backend surface makes product operations, store logic, dashboard hierarchy, payment proof, and control flows usable instead of hidden",
+    media: ["./assets/projects/ypod/backend-management-room.jpeg", "./assets/proofs/ypod-backend-management-proof.mp4", "./assets/proofs/backend-crypto-transfer-proof.mp4"],
+    headline: "backend control treated like product",
+    summary: "the backend surface turns operations, payment review, dashboard hierarchy, and product control into a visible system the business can actually run",
     role: "admin ux, backend systems, dashboard structure, database thinking",
     system: "supabase, auth, admin control, product operations, payment review",
     tools: ["figma", "notion", "next.js", "react", "supabase", "vercel"],
@@ -93,9 +93,9 @@ const projects = [
     hero: "./assets/projects/dealradar/banner-dark.png",
     card: "./assets/projects/dealradar/card1minimalgraphicblack.png",
     proofVideo: "./assets/proofs/dealradar-proof.mp4",
-    media: ["./assets/projects/dealradar/banner-dark.png", "./assets/projects/dealradar/main-logo-light.svg"],
-    headline: "deal discovery framed for attention and action",
-    summary: "dealradar ng needs instant recognition, campaign structure, merchant visibility, and a clear route from discovery to ecommerce action",
+    media: ["./assets/projects/dealradar/card1minimalgraphicblack.png", "./assets/projects/dealradar/banner-dark.png", "./assets/proofs/dealradar-proof.mp4"],
+    headline: "deal discovery framed for action",
+    summary: "dealradar ng uses sharp recognition, campaign structure, merchant visibility, and ecommerce routing so offers can move from attention to action",
     role: "marketplace ux, digital marketing, campaign structure, conversion design",
     system: "merchant visibility, offer discovery, campaign routing, ecommerce action",
     tools: ["figma", "notion", "next.js", "react", "tailwind css", "vercel"],
@@ -113,9 +113,9 @@ const projects = [
     card: "./assets/projects/naturepacks/paper-01.jpeg",
     proofVideo: "./assets/proofs/naturepacks-landing-proof.mp4",
     proofAlt: "./assets/proofs/naturepacks-founder-proof.mp4",
-    media: ["./assets/projects/naturepacks/merch-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/projects/naturepacks/paper-01.jpeg"],
-    headline: "sustainability made tangible through product and proof",
-    summary: "naturepacks™ connects material story, packaging identity, merch proof, product form, and environmental impact into one believable system",
+    media: ["./assets/projects/naturepacks/paper-01.jpeg", "./assets/projects/naturepacks/merch-02.jpeg", "./assets/media/naturepacks-shirt-proof.jpg", "./assets/proofs/naturepacks-landing-proof.mp4"],
+    headline: "sustainability made visible with proof",
+    summary: "naturepacks™ connects material story, packaging identity, product evidence, and environmental purpose into a brand system visitors can understand quickly",
     role: "sustainability storytelling, brand systems, product visuals, impact design",
     system: "material story, proof assets, product identity, environmental impact",
     tools: ["figma", "notion", "html", "css", "vercel"],
@@ -151,6 +151,12 @@ function media(src, alt, className = "") {
 
 function mark(project, dark = false) {
   return `<img src="${dark ? project.darkLogo : project.logo}" alt="${project.title}" loading="lazy">`;
+}
+
+function detailMedia(project) {
+  return [project.card || project.hero, project.hero, ...project.media]
+    .filter(Boolean)
+    .filter((src, index, list) => list.indexOf(src) === index);
 }
 
 function projectStrip() {
@@ -330,8 +336,7 @@ function casePage(project) {
         </article>
       </section>
       <section class="proof-wall">
-        ${media(project.hero, project.title, "hero-media")}
-        ${project.media.map((src, index) => media(src, `${project.title} proof ${index + 1}`)).join("")}
+        ${detailMedia(project).map((src, index) => media(src, `${project.title} proof ${index + 1}`, index === 0 ? "hero-media" : "")).join("")}
       </section>
     </div>
   `;
