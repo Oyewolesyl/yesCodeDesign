@@ -26,15 +26,15 @@ const projects = [
     live: "https://ypod.vercel.app",
     logo: "./assets/projects/ypod/yema-dark.png",
     darkLogo: "./assets/projects/ypod/yema-dark.png",
-    hero: "./assets/projects/ypod/ypro-fit.png",
+    hero: "./assets/projects/ypod/yema-dark.png",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
-    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/ypro-fit.png"],
+    media: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png"],
     headline: "sleep hardware presented with product proof",
-    summary: "ypod is shaped as a believable hardware brand through product art direction, fit studies, launch framing, and clear product storytelling",
+    summary: "ypod is shaped as a believable hardware brand through product art direction, launch framing, product hierarchy, and clear product storytelling",
     role: "hardware storytelling, creative direction, product strategy, launch systems",
-    system: "brand feel, product media, fit proof, launch storytelling",
+    system: "brand feel, product media, product proof, launch storytelling",
     tools: ["figma", "notion", "react", "vercel"],
-    story: ["product imagery is treated as evidence", "fit studies make the promise feel functional", "the site moves from brand feeling into product clarity"],
+    story: ["product imagery is treated as evidence", "product hierarchy makes the promise feel functional", "the site moves from brand feeling into product clarity"],
   },
   {
     slug: "ypod-store",
@@ -51,7 +51,7 @@ const projects = [
     summary: "the commerce web app turns ypod into a browsable product system with clear choice making, product hierarchy, and mobile purchase intent",
     role: "ecommerce ux, product cards, shop structure, conversion flow",
     system: "product browsing, comparison flow, mobile commerce, purchase confidence",
-    tools: ["figma", "notion", "next js", "react", "vercel"],
+    tools: ["figma", "notion", "next.js", "react", "vercel"],
     story: ["product cutouts lead the commerce experience", "the layout supports quick comparison", "the shop extends the brand without hiding purchase action"],
     proofs: [{ label: "watch shop proof on x", url: "https://x.com/daveayodeji_/status/2069845385393086882/video/1?s=46" }],
   },
@@ -71,7 +71,7 @@ const projects = [
     summary: "the backend surface makes product operations, store logic, dashboard hierarchy, payment proof, and control flows usable instead of hidden",
     role: "admin ux, backend systems, dashboard structure, database thinking",
     system: "supabase, auth, admin control, product operations, payment review",
-    tools: ["figma", "notion", "next js", "react", "supabase", "vercel"],
+    tools: ["figma", "notion", "next.js", "react", "supabase", "vercel"],
     story: ["admin flows need hierarchy and fast comprehension", "backend logic becomes visible product control", "the system supports commerce operations after launch"],
     proofs: [
       { label: "watch backend proof on x", url: "https://x.com/daveayodeji_/status/2069818800896106503/video/1?s=46" },
@@ -93,7 +93,7 @@ const projects = [
     summary: "dealradar ng needs instant recognition, campaign structure, merchant visibility, and a clear route from discovery to ecommerce action",
     role: "marketplace ux, digital marketing, campaign structure, conversion design",
     system: "merchant visibility, offer discovery, campaign routing, ecommerce action",
-    tools: ["figma", "notion", "next js", "react", "tailwind css", "vercel"],
+    tools: ["figma", "notion", "next.js", "react", "tailwind css", "vercel"],
     story: ["the mark creates quick recognition", "campaign visuals support merchant visibility", "the structure points visitors toward action"],
   },
   {
@@ -203,7 +203,7 @@ function work(title = "work") {
     <section class="work-shell">
       <div class="section-head">
         <p class="kicker">${title}</p>
-        <h2>each case carries its own product world</h2>
+        <h2>each case carries its own product proof</h2>
         <p>real marks, live sites, local proof videos, tool context, design role, and product story are organized around what each brand needed to become</p>
       </div>
       <div class="case-flow">

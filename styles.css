@@ -12,6 +12,11 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 body {
   margin: 0;
   color: var(--ink);
@@ -33,6 +38,10 @@ body::before {
   mask-image: linear-gradient(to bottom, black 0 48%, transparent 92%);
 }
 a { color: inherit; }
+img,
+video {
+  max-width: 100%;
+}
 .load-veil {
   position: fixed;
   inset: 0;
@@ -207,6 +216,7 @@ body.is-loading .load-veil {
   align-content: end;
   padding: 1.2rem;
   overflow: hidden;
+  min-width: 0;
   text-decoration: none;
   border: 1px solid var(--line);
   background: #080808;
@@ -281,6 +291,7 @@ body.is-loading .load-veil {
   align-items: center;
   border-top: 1px solid var(--line);
   padding-top: clamp(1.5rem, 4vw, 3rem);
+  min-width: 0;
 }
 .case-count {
   color: var(--quiet);
@@ -391,6 +402,7 @@ body.is-loading .load-veil {
   min-height: clamp(31rem, 55vw, 49rem);
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 .phone-shell,
 .mini-phone {
@@ -459,6 +471,7 @@ body.is-loading .load-veil {
   grid-template-columns: 1.1fr 0.9fr 0.8fr;
   gap: 1rem;
   padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem);
+  min-width: 0;
 }
 .proof-wall .media {
   min-height: clamp(17rem, 32vw, 31rem);
@@ -772,5 +785,114 @@ body.is-loading .load-veil::before {
 
   .phone-stage {
     min-height: 34rem;
+  }
+
+  .project-strip,
+  .case-flow,
+  .proof-wall {
+    gap: 1rem;
+  }
+
+  .strip-item,
+  .case-media .media,
+  .proof-wall .media {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .media img,
+  .media video {
+    object-fit: contain;
+  }
+
+  .case-copy,
+  .case-media,
+  .case-hero,
+  .proof-wall,
+  .phone-stage {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header,
+  .hero,
+  .work-shell,
+  .services,
+  .systems,
+  .process,
+  .contact,
+  .case-hero,
+  .case-story,
+  .proof-wall,
+  .project-strip {
+    padding-left: 0.9rem;
+    padding-right: 0.9rem;
+  }
+
+  .brand img {
+    width: min(10.5rem, 64vw);
+  }
+
+  .nav-links {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+  }
+
+  .hero h1,
+  .section-head h2,
+  .case-hero h1,
+  .case-story h2,
+  .contact h2,
+  .case-copy h3 {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-board {
+    grid-template-columns: 1fr;
+  }
+
+  .strip-item {
+    min-height: 18rem;
+    padding: 1rem;
+  }
+
+  .case-line {
+    gap: 1rem;
+  }
+
+  .case-logo,
+  .strip-logo {
+    width: min(12rem, 82vw);
+  }
+
+  .phone-stage {
+    min-height: 28rem;
+  }
+
+  .phone-shell {
+    width: min(82vw, 17rem);
+  }
+
+  .mini-phone {
+    width: min(34vw, 7rem);
+    right: 0.2rem;
+    bottom: 0.2rem;
+  }
+
+  .proof-wall .media {
+    aspect-ratio: 1 / 1;
   }
 }
