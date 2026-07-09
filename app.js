@@ -141,6 +141,11 @@ const automation = [
   ["proof", "deployed urls, local videos, and project media show the work as a living product"],
 ];
 
+const projectOrder = ["ypod", "naturepacks", "ypod-store", "dealradar-ng", "ypod-backend-management", "a-home-realty"];
+const orderedProjects = projectOrder
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter(Boolean);
+
 function isVideo(src) {
   return src.endsWith(".mp4");
 }
@@ -165,7 +170,7 @@ function detailMedia(project) {
 function projectStrip() {
   return `
     <section class="project-strip">
-      ${projects.map((project) => `
+      ${orderedProjects.map((project) => `
         <a href="#/project/${project.slug}" class="strip-item ${project.tone}">
           ${media(project.card || project.hero, project.title)}
           <span class="strip-logo">${mark(project, true)}</span>
@@ -222,7 +227,7 @@ function work(title = "work") {
         <p>real marks, live sites, local proof videos, tool context, design role, and product story are organized around what each brand needed to become</p>
       </div>
       <div class="case-flow">
-        ${projects.map((project, index) => `
+        ${orderedProjects.map((project, index) => `
           <article class="case-line ${project.tone}">
             <div class="case-count">${String(index + 1).padStart(2, "0")}</div>
             <div class="case-media">
@@ -290,15 +295,29 @@ function contact() {
       <div>
         <p class="kicker">contact</p>
         <h2>bring the product, the assets, and the proof</h2>
-        <p class="founders">cofounders: <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a> and <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a></p>
+        <div class="founders">
+          <article>
+            <strong>DAVE</strong>
+            <span>Founder · Design Engineer</span>
+            <span>Technical Lead, Product & Design</span>
+          </article>
+          <article>
+            <strong>SYLVANNA</strong>
+            <span>Founder</span>
+            <span>Design Engineer</span>
+            <span>Brand, Growth & Partnerships</span>
+          </article>
+        </div>
         <form class="intake-form" action="https://formsubmit.co/oyewolesyl@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="new yescode design project overview">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_cc" value="daveolaniyan@gmail.com">
+          <input type="hidden" name="_template" value="table">
           <label>name<input name="name" type="text" autocomplete="name" required></label>
           <label>email<input name="email" type="email" autocomplete="email" required></label>
           <label>project overview<textarea name="project_overview" rows="5" required></textarea></label>
           <button class="primary" type="submit">send project overview</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
         <a class="secondary" href="https://x.com/yescodedesign?s=21" target="_blank" rel="noreferrer">open x</a>
       </div>
@@ -368,6 +387,7 @@ function wireMedia() {
     const done = () => item.closest(".media, .phone-shell, .mini-phone")?.classList.add("ready");
     item.addEventListener("load", done);
     item.addEventListener("loadeddata", done);
+    item.addEventListener("error", done);
     if (item.complete || item.readyState >= 2) done();
   });
 }
@@ -378,18 +398,34 @@ document.querySelector(".menu-button").addEventListener("click", () => {
   document.querySelector(".menu-button").setAttribute("aria-expanded", String(open));
 });
 
-document.addEventListener("submit", (event) => {
+document.addEventListener("submit", async (event) => {
   const form = event.target.closest(".intake-form");
   if (!form) return;
   event.preventDefault();
+  const button = form.querySelector("button[type='submit']");
+  const status = form.querySelector(".form-status");
   const data = new FormData(form);
-  const body = [
-    `name: ${data.get("name") || ""}`,
-    `email: ${data.get("email") || ""}`,
-    "",
-    data.get("project_overview") || "",
-  ].join("\n");
-  window.location.href = `mailto:oyewolesyl@gmail.com,daveolaniyan@gmail.com?subject=${encodeURIComponent("new yescode design project overview")}&body=${encodeURIComponent(body)}`;
+  const endpoint = form.action.replace("https://formsubmit.co/", "https://formsubmit.co/ajax/");
+  button.disabled = true;
+  button.textContent = "sending...";
+  if (status) status.textContent = "";
+  try {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { Accept: "application/json" },
+      body: data,
+    });
+    if (!response.ok) throw new Error("send failed");
+    form.reset();
+    if (status) status.textContent = "sent. we will reply from the founder inbox.";
+  } catch (error) {
+    if (status) status.textContent = "opening secure send page...";
+    HTMLFormElement.prototype.submit.call(form);
+    return;
+  } finally {
+    button.disabled = false;
+    button.textContent = "send project overview";
+  }
 });
 document.querySelector("[data-scroll='top']").addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 document.querySelector("[data-scroll='bottom']").addEventListener("click", () => window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" }));

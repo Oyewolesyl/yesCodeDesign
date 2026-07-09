@@ -83,6 +83,15 @@ body.is-loading .load-veil {
   text-transform: lowercase;
 }
 .nav-links a:hover { color: var(--ink); }
+.nav-links .nav-highlight {
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+  padding: 0.45rem 0.7rem;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+.nav-links .nav-highlight:hover {
+  border-color: var(--ink);
+}
 .menu-button {
   display: none;
   justify-self: end;
@@ -526,6 +535,9 @@ body.is-loading .load-veil {
   text-decoration-color: var(--line-strong);
   text-underline-offset: 0.22em;
 }
+.site-footer span {
+  color: var(--ink);
+}
 .scroll-tools {
   position: fixed;
   right: 1rem;
@@ -811,8 +823,29 @@ body.is-loading .load-veil::before {
   font: inherit;
 }
 
+.form-status {
+  min-height: 1.4rem;
+  margin: 0;
+  color: color-mix(in srgb, var(--accent) 74%, var(--ink));
+  font-size: 0.92rem;
+}
+
 .founders {
+  display: grid;
+  gap: 0.9rem;
   color: var(--muted);
+}
+
+.founders article {
+  display: grid;
+  gap: 0.2rem;
+  padding-block: 0.2rem;
+}
+
+.founders strong {
+  color: var(--ink);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
 }
 
 .founders a {
@@ -1110,5 +1143,161 @@ body.is-loading .load-veil::before {
   .site-footer a {
     max-width: 100%;
     overflow-wrap: anywhere;
+  }
+}
+
+.media::after,
+.phone-shell::after,
+.mini-phone::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(110deg, transparent 0 38%, rgba(247, 244, 237, 0.12) 48%, transparent 58%),
+    linear-gradient(135deg, rgba(247, 244, 237, 0.055), rgba(247, 244, 237, 0.012));
+  background-size: 220% 100%, 100% 100%;
+  animation: element-load 1.15s ease-in-out infinite;
+}
+
+.media.ready::after,
+.phone-shell.ready::after,
+.mini-phone.ready::after {
+  opacity: 0;
+  animation: none;
+}
+
+@keyframes element-load {
+  from { background-position: 160% 0, 0 0; }
+  to { background-position: -60% 0, 0 0; }
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .hero,
+  .work-shell,
+  .services,
+  .systems,
+  .process,
+  .contact,
+  .case-hero,
+  .case-story,
+  .proof-wall,
+  .project-strip {
+    width: 100%;
+    max-width: 100vw;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    overflow: hidden;
+  }
+
+  .hero,
+  .case-hero,
+  .section-head,
+  .case-line,
+  .case-story,
+  .contact {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero {
+    min-height: auto !important;
+    gap: 1.5rem !important;
+    padding-top: 2.75rem !important;
+    padding-bottom: 2.75rem !important;
+  }
+
+  .hero-copy,
+  .hero-board,
+  .case-copy,
+  .case-media,
+  .proof-wall,
+  .project-strip,
+  .service-list,
+  .system-flow,
+  .process-grid {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero h1,
+  .section-head h2,
+  .case-hero h1,
+  .case-story h2,
+  .contact h2,
+  .case-copy h3 {
+    max-width: 100% !important;
+    font-size: clamp(2rem, 10.5vw, 3.15rem) !important;
+    line-height: 1 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+
+  .hero p,
+  .section-head p,
+  .case-line p,
+  .case-hero p,
+  .case-story p,
+  .service-list p,
+  .system-flow p,
+  .process-grid p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-board,
+  .project-strip,
+  .service-list,
+  .system-flow,
+  .process-grid,
+  .proof-wall {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .hero-board article {
+    min-height: 7.5rem !important;
+    padding: 0.9rem !important;
+  }
+
+  .strip-item {
+    min-height: 18rem !important;
+  }
+
+  .media,
+  .case-media .media,
+  .proof-wall .media {
+    min-height: 0 !important;
+    aspect-ratio: 4 / 3 !important;
+  }
+
+  .case-line {
+    display: block !important;
+  }
+
+  .case-count,
+  .case-media,
+  .case-copy,
+  .proof-wall,
+  .proof-wall .media,
+  .strip-item,
+  .strip-item .media,
+  .media,
+  .media img,
+  .media video {
+    max-width: 100% !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: none !important;
+  }
+
+  .strip-item .media {
+    left: 0 !important;
+    right: 0 !important;
   }
 }
