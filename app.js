@@ -28,7 +28,7 @@ const projects = [
     logo: "./assets/projects/ypod/yema-dark.png",
     darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/yema-dark.png",
-    card: "./assets/projects/ypod/remote-customization.mp4",
+    card: "./assets/projects/ypod/yema-dark.png",
     proofVideo: "./assets/proofs/ypod-landing-proof.mp4",
     media: ["./assets/projects/ypod/yema-dark.png", "./assets/proofs/ypod-landing-proof.mp4"],
     detailMedia: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-landing-proof.mp4"],
@@ -48,10 +48,10 @@ const projects = [
     logo: "./assets/projects/ypod/yema-dark.png",
     darkLogo: "./assets/projects/ypod/yema-dark.png",
     hero: "./assets/projects/ypod/remote-customization.mp4",
-    card: "./assets/projects/ypod/remote-customization.mp4",
+    card: "./assets/projects/ypod/yema-case.png",
     proofVideo: "./assets/proofs/ypod-store-proof.mp4",
-    media: ["./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
-    detailMedia: ["./assets/projects/ypod/remote-customization.mp4", "./assets/projects/ypod/yema-case.png", "./assets/proofs/ypod-store-proof.mp4"],
+    media: ["./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
+    detailMedia: ["./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
     headline: "a store surface built for product decisions",
     summary: "the commerce web app turns ypod into a browsable product system with visible product choice, mobile purchase intent, and a clearer path toward checkout",
     role: "ecommerce ux, product cards, shop structure, conversion flow",
@@ -141,6 +141,24 @@ const automation = [
   ["proof", "deployed urls, local videos, and project media show the work as a living product"],
 ];
 
+const brandProof = [
+  {
+    name: "NaturePacks identity",
+    note: "main mark, contrast mark, shirt proof, merch proof, and material proof used as a full brand system",
+    assets: ["./assets/projects/naturepacks/naturepacks-main.svg", "./assets/projects/naturepacks/naturepacks-white-black.svg", "./assets/media/naturepacks-shirt-proof.jpg", "./assets/projects/naturepacks/merch-01.jpeg"],
+  },
+  {
+    name: "ypod product language",
+    note: "dark product art, floating product media, store proof, and commerce surface all working together",
+    assets: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
+  },
+  {
+    name: "campaign and system marks",
+    note: "live brand anchors for marketplace, product systems, and design arm identity",
+    assets: ["./assets/projects/dealradar/main-logo-light.svg", "./assets/brand/yescode-design-main.svg", "./assets/brand/yescode-design-dark.svg"],
+  },
+];
+
 const projectOrder = ["ypod", "naturepacks", "ypod-store", "dealradar-ng", "ypod-backend-management", "a-home-realty"];
 const orderedProjects = projectOrder
   .map((slug) => projects.find((project) => project.slug === slug))
@@ -182,6 +200,29 @@ function projectStrip() {
   `;
 }
 
+function brandShowcase() {
+  return `
+    <section class="brand-showcase">
+      <div class="section-head">
+        <p class="kicker">brand systems</p>
+        <h2>logo versions, product assets, and brand proof</h2>
+        <p>the design arm carries identity work across marks, contrast versions, merch, product media, proof videos, and live surfaces that make each product feel real.</p>
+      </div>
+      <div class="brand-grid">
+        ${brandProof.map((group) => `
+          <article>
+            <div class="brand-assets">
+              ${group.assets.map((asset) => media(asset, group.name)).join("")}
+            </div>
+            <h3>${group.name}</h3>
+            <p>${group.note}</p>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function phoneProof(project) {
   return `
     <div class="phone-stage">
@@ -204,6 +245,7 @@ function home() {
         <div class="actions">
           <a class="primary" href="#/work">view the work</a>
           <a class="secondary" href="#/services">see services</a>
+          <a class="secondary cta-cross" href="https://yes-code.vercel.app/" target="_blank" rel="noreferrer">visit yescode</a>
         </div>
       </div>
       <div class="hero-board">
@@ -211,6 +253,7 @@ function home() {
       </div>
     </section>
     ${projectStrip()}
+    ${brandShowcase()}
     ${work("featured design work")}
     ${systemsView()}
     ${servicesView()}
@@ -297,15 +340,17 @@ function contact() {
         <h2>bring the product, the assets, and the proof</h2>
         <div class="founders">
           <article>
-            <strong>DAVE</strong>
-            <span>Founder · Design Engineer</span>
+            <strong>Dave Olaniyan</strong>
+            <span>Founder / Design Engineer</span>
             <span>Technical Lead, Product & Design</span>
+            <a href="mailto:daveolaniyan@gmail.com">daveolaniyan@gmail.com</a>
           </article>
           <article>
-            <strong>SYLVANNA</strong>
+            <strong>Sylvanna Oyewole</strong>
             <span>Founder</span>
             <span>Design Engineer</span>
             <span>Brand, Growth & Partnerships</span>
+            <a href="mailto:oyewolesyl@gmail.com">oyewolesyl@gmail.com</a>
           </article>
         </div>
         <form class="intake-form" action="https://formsubmit.co/oyewolesyl@gmail.com" method="POST">
