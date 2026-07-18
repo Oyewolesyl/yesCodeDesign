@@ -143,19 +143,63 @@ const automation = [
 
 const brandProof = [
   {
-    name: "NaturePacks identity",
-    note: "main mark, contrast mark, shirt proof, merch proof, and material proof used as a full brand system",
-    assets: ["./assets/projects/naturepacks/naturepacks-main.svg", "./assets/projects/naturepacks/naturepacks-white-black.svg", "./assets/media/naturepacks-shirt-proof.jpg", "./assets/projects/naturepacks/merch-01.jpeg"],
+    name: "NaturePacks identity system",
+    scope: "impact brand / logo variants / merch proof",
+    note: "main mark, reverse contrast, shirt proof, merch, material imagery, and live site motion make the sustainability story feel tangible.",
+    assets: [
+      { src: "./assets/projects/naturepacks/naturepacks-main.svg", label: "main mark" },
+      { src: "./assets/projects/naturepacks/naturepacks-white-black.svg", label: "reverse contrast" },
+      { src: "./assets/media/naturepacks-shirt-proof.jpg", label: "shirt proof", size: "wide" },
+      { src: "./assets/projects/naturepacks/merch-01.jpeg", label: "merch application" },
+      { src: "./assets/projects/naturepacks/merch-02.jpeg", label: "secondary merch" },
+      { src: "./assets/projects/naturepacks/paper-01.jpeg", label: "material proof" },
+      { src: "./assets/proofs/naturepacks-landing-proof.mp4", label: "landing proof", size: "wide" },
+    ],
   },
   {
-    name: "ypod product language",
-    note: "dark product art, floating product media, store proof, and commerce surface all working together",
-    assets: ["./assets/projects/ypod/yema-dark.png", "./assets/projects/ypod/yema-case.png", "./assets/projects/ypod/remote-customization.mp4", "./assets/proofs/ypod-store-proof.mp4"],
+    name: "ypod product identity",
+    scope: "hardware brand / floating product assets / commerce proof",
+    note: "dark product direction, no-background product media, customization motion, store proof, and launch surface keep the hardware brand inspectable.",
+    assets: [
+      { src: "./assets/projects/ypod/yema-dark.png", label: "hero product mark", size: "wide" },
+      { src: "./assets/projects/ypod/yema-case.png", label: "floating product asset" },
+      { src: "./assets/projects/ypod/remote-customization.mp4", label: "customization motion" },
+      { src: "./assets/proofs/ypod-landing-proof.mp4", label: "brand site proof", size: "wide" },
+      { src: "./assets/proofs/ypod-store-proof.mp4", label: "store proof", size: "wide" },
+    ],
   },
   {
-    name: "campaign and system marks",
-    note: "live brand anchors for marketplace, product systems, and design arm identity",
-    assets: ["./assets/projects/dealradar/main-logo-light.svg", "./assets/brand/yescode-design-main.svg", "./assets/brand/yescode-design-dark.svg"],
+    name: "DealRadar campaign system",
+    scope: "marketplace brand / ad surfaces / live campaign proof",
+    note: "the logo, banner, campaign card, and deployed flow give the marketplace a quick read and a stronger path to action.",
+    assets: [
+      { src: "./assets/projects/dealradar/main-logo-light.svg", label: "market mark" },
+      { src: "./assets/projects/dealradar/banner-dark.png", label: "ad banner", size: "wide" },
+      { src: "./assets/projects/dealradar/card1minimalgraphicblack.png", label: "campaign card" },
+      { src: "./assets/proofs/dealradar-proof.mp4", label: "live proof", size: "wide" },
+    ],
+  },
+  {
+    name: "yesCodeDesign identity",
+    scope: "studio system / logo forms / ecosystem motion",
+    note: "main lockup, dark lockup, intro motion, and ecosystem proof position the design arm as its own capable product studio.",
+    assets: [
+      { src: "./assets/brand/yescode-design-main.svg", label: "main lockup", size: "wide" },
+      { src: "./assets/brand/yescode-design-dark.svg", label: "dark lockup", size: "wide" },
+      { src: "./assets/media/yescode-design-intro.mp4", label: "intro motion", size: "wide" },
+      { src: "./assets/media/yescode-ecosystem.mp4", label: "ecosystem proof", size: "wide" },
+    ],
+  },
+  {
+    name: "A Home Realty premium mark",
+    scope: "real estate brand / logo behavior / property proof",
+    note: "premium logo behavior, estate imagery, interior proof, and live dark-light motion keep the property experience calm and trusted.",
+    assets: [
+      { src: "https://ahomerealty.vercel.app/assets/brand/ahome-logo-gold-dark.svg", label: "gold mark" },
+      { src: "https://ahomerealty.vercel.app/assets/properties/estate-approach-05.png", label: "estate mood", size: "wide" },
+      { src: "https://ahomerealty.vercel.app/assets/properties/grand-interior-04.png", label: "interior proof" },
+      { src: "./assets/proofs/ahome-dark-light-proof.mp4", label: "dark light proof", size: "wide" },
+    ],
   },
 ];
 
@@ -203,19 +247,28 @@ function projectStrip() {
 function brandShowcase() {
   return `
     <section class="brand-showcase">
-      <div class="section-head">
+      <div class="section-head brand-head">
         <p class="kicker">brand systems</p>
-        <h2>logo versions, product assets, and brand proof</h2>
-        <p>the design arm carries identity work across marks, contrast versions, merch, product media, proof videos, and live surfaces that make each product feel real.</p>
+        <h2>identity systems with proof, not decoration</h2>
+        <p>each project shows the logo forms, contrast versions, campaign assets, product media, and live proof that make the brand usable before launch.</p>
       </div>
-      <div class="brand-grid">
-        ${brandProof.map((group) => `
-          <article>
-            <div class="brand-assets">
-              ${group.assets.map((asset) => media(asset, group.name)).join("")}
+      <div class="brand-system-list">
+        ${brandProof.map((group, index) => `
+          <article class="brand-system ${index % 2 ? "reverse" : ""}">
+            <div class="brand-system-copy">
+              <span class="brand-index">${String(index + 1).padStart(2, "0")}</span>
+              <p class="kicker">${group.scope}</p>
+              <h3>${group.name}</h3>
+              <p>${group.note}</p>
             </div>
-            <h3>${group.name}</h3>
-            <p>${group.note}</p>
+            <div class="brand-proof-board">
+              ${group.assets.map((asset, assetIndex) => `
+                <article class="brand-tile ${asset.size || ""}">
+                  ${media(asset.src, `${group.name} ${asset.label}`, assetIndex === 0 ? "feature-media" : "")}
+                  <span>${asset.label}</span>
+                </article>
+              `).join("")}
+            </div>
           </article>
         `).join("")}
       </div>
