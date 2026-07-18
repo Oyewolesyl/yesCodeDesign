@@ -216,7 +216,7 @@ function media(src, alt, className = "") {
   const content = isVideo(src)
     ? `<video src="${src}" autoplay muted loop playsinline></video>`
     : `<img src="${src}" alt="${alt}" loading="lazy">`;
-  return `<figure class="media ${className}">${content}</figure>`;
+  return `<figure class="media ${className}"><span class="media-loader" aria-hidden="true"><i></i><i></i><i></i></span>${content}</figure>`;
 }
 
 function mark(project, dark = false) {
@@ -295,6 +295,11 @@ function home() {
         <p class="kicker">strategy, interface, identity, handoff</p>
         <h1>design systems people can build from</h1>
         <p>product direction, interface design, brand systems, figma execution, notion planning, and project specific proof for products that need to feel real before launch</p>
+        <div class="proof-badges" aria-label="capability proof">
+          <span>brand systems</span>
+          <span>live product proof</span>
+          <span>responsive handoff</span>
+        </div>
         <div class="actions">
           <a class="primary" href="#/work">view the work</a>
           <a class="secondary" href="#/services">see services</a>
